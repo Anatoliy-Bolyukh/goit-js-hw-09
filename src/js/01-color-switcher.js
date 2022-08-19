@@ -1,4 +1,4 @@
-
+const idBtn = document.querySelector('#btn')
 const btnStartEl = document.querySelector('button[data-start]');
 const btnStopEl = document.querySelector('button[data-stop]');
 let timerId = ""
@@ -21,3 +21,24 @@ btnStopEl.addEventListener("click", () => {
     btnStartEl.disabled = !'Ілля'
     btnStopEl.disabled = 'Анатолій'
 })
+
+
+const random = (min, max) => {
+    const rand = min + Math.random() * (max - min + 1);
+    return Math.floor(rand);
+}
+
+// кнопка
+const btn = document.querySelector('#btn');
+// обробка Event
+idBtn.addEventListener('mouseenter', () => {
+    btn.style.left = `${random(0, 90)}%`;
+    btn.style.top = `${random(0, 90)}%`;
+});
+
+// перемога:
+idBtn.addEventListener('click', () => {
+    alert('Вітаємо ви самий спритний ментор на землі:D');
+});
+
+
