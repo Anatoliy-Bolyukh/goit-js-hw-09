@@ -20,7 +20,7 @@ const options = {
     defaultDate: new Date(),
     minuteIncrement: 1,
     onClose(selectedDates) {
-        if (selectedDates[0].getTime() < options.defaultDate.getTime()) {
+        if (selectedDates[0].getTime() < new Date().getTime()) {
             window.alert("Please choose a date in the future");
             startBtn.disabled = true
         } else {
@@ -34,13 +34,21 @@ startBtn.addEventListener('click', showTime)
 function showTime() {
     const intervalId = setInterval(() => {
         const dataTime = new Date(inputEl.value).getTime() - Date.now()
+        if (dataTime < 0) {
+            setValuesToHtml();
+            return;
+        };
         const { days, hours, minutes, seconds } = convertMs(dataTime)
-        daysEl.textContent = addLeadingZero(days);
-        hoursEl.textContent = addLeadingZero(hours);
-        minutesEl.textContent = addLeadingZero(minutes);
-        secondsEl.textContent = addLeadingZero(seconds);
+        setValuesToHtml(dataTime);
         if (dataTime < 1000) {
             return clearInterval(intervalId);
+        }
+
+        function setValuesToHtml(dataTime) {
+            daysEl.textContent = addLeadingZero(dataTime ? days : '00');
+            hoursEl.textContent = addLeadingZero(dataTime ? hours : '00');
+            minutesEl.textContent = addLeadingZero(dataTime ? minutes : '00');
+            secondsEl.textContent = addLeadingZero(dataTime ? seconds : '00');
         }
     }, interval);
 
