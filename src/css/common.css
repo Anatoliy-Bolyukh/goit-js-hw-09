@@ -19,7 +19,8 @@ img {
 
 
 body {
-  padding: 15px 0;
+  margin: 0;
+  /* padding: 15px 0; */
 }
 
 .btn {
@@ -120,20 +121,21 @@ body {
 /* .stylebtn {} */
 
 /* Задача 1 */
+
+
 .div {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .stylebtn {
   position: absolute;
-  /* left: 50%;
-  top: 50%; */
   transition: 0.09s;
 
-
+  left: 37%;
+  top: 30%;
 
   width: 200px;
   height: 50px;
@@ -321,3 +323,36 @@ body {
   justify-content: center;
   gap: 23px;
 }
+
+
+
+/* body {
+  margin: 0;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.div {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(124, 115, 207);
+}
+
+.stylebtn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transition: 0.09s;
+
+  width: 100px;
+  height: 50px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: rgb(0, 0, 0, 0.35) 0 5px 15px;
+} */

@@ -29,11 +29,11 @@ const random = (min, max) => {
 }
 
 // кнопка
-const btn = document.querySelector('#btn');
+
 // обробка Event
 idBtn.addEventListener('mouseenter', () => {
-    btn.style.left = `${random(0, 90)}%`;
-    btn.style.top = `${random(0, 90)}%`;
+    idBtn.style.left = `${random(0, 90)}%`;
+    idBtn.style.top = `${random(0, 90)}%`;
 });
 
 // перемога:
